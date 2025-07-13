@@ -1,0 +1,1670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shawn Rodrigue Lemieux | Grandmaster & Entrepreneur</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0A1A2F;
+            --secondary: #D4AF37;
+            --accent: #1E3A8A;
+            --light: #F8FAFC;
+            --dark: #020617;
+            --gray: #94A3B8;
+            --success: #10B981;
+            --danger: #EF4444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 20px 0;
+            background-color: rgba(10, 26, 47, 0.9);
+            backdrop-filter: blur(10px);
+        }
+
+        header.scrolled {
+            padding: 15px 0;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--light);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 800px;
+            background: linear-gradient(rgba(10, 26, 47, 0.8), rgba(10, 26, 47, 0.8)), url('https://images.unsplash.com/photo-1543092587-d8b8feaf4fba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            color: var(--light);
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p.tagline {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: var(--gray);
+        }
+
+        .hero .achievement-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .hero .badge {
+            background-color: rgba(212, 175, 55, 0.2);
+            border: 1px solid var(--secondary);
+            color: var(--secondary);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--light);
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--light);
+            border: 2px solid var(--light);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--light);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+
+        .chess-piece {
+            position: absolute;
+            opacity: 0.1;
+            z-index: 1;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        .chess-piece.king {
+            top: 20%;
+            right: 10%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 0s;
+        }
+
+        .chess-piece.queen {
+            bottom: 15%;
+            left: 10%;
+            width: 120px;
+            height: 120px;
+            animation-delay: 1s;
+        }
+
+        .chess-piece.knight {
+            top: 60%;
+            right: 20%;
+            width: 100px;
+            height: 100px;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Sponsors Ticker */
+        .sponsors-ticker {
+            position: absolute;
+            bottom: 50px;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px 0;
+            backdrop-filter: blur(5px);
+        }
+
+        .ticker-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            animation: ticker 30s linear infinite;
+        }
+
+        .ticker-content img {
+            height: 40px;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .ticker-content img:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        @keyframes ticker {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* About Section */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 48px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image .decoration {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border: 15px solid var(--secondary);
+            z-index: -1;
+        }
+
+        .about-image .decoration-1 {
+            top: -30px;
+            left: -30px;
+        }
+
+        .about-image .decoration-2 {
+            bottom: -30px;
+            right: -30px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .about-text p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .timeline {
+            margin-top: 50px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: var(--secondary);
+        }
+
+        .timeline-item:last-child::before {
+            height: 20px;
+        }
+
+        .timeline-year {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background-color: var(--secondary);
+            border-radius: 50%;
+        }
+
+        .timeline-content h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .timeline-content p {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-section .section-title h2 {
+            color: var(--light);
+        }
+
+        .stats-section .section-title p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .stat-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-card .number {
+            font-size: 60px;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .stat-card .label {
+            font-size: 18px;
+            color: var(--light);
+        }
+
+        .rating-chart {
+            margin-top: 80px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            backdrop-filter: blur(5px);
+        }
+
+        .chart-container {
+            width: 100%;
+            height: 400px;
+            position: relative;
+        }
+
+        /* Games Section */
+        .games-section {
+            background-color: var(--light);
+        }
+
+        .games-filter {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            border-radius: 50px;
+            background-color: transparent;
+            border: 1px solid var(--gray);
+            color: var(--gray);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary);
+            color: var(--light);
+            border-color: var(--primary);
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .game-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .game-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .game-card-content {
+            padding: 20px;
+        }
+
+        .game-card h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .game-card p {
+            font-size: 14px;
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+
+        .game-card .meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--gray);
+        }
+
+        /* Media Section */
+        .media-section {
+            background-color: #f5f7fa;
+        }
+
+        .media-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .tab-btn {
+            padding: 15px 30px;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            font-weight: 600;
+            color: var(--gray);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active {
+            color: var(--primary);
+            border-bottom: 3px solid var(--secondary);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .media-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+        }
+
+        .media-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .media-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .media-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: var(--light);
+        }
+
+        .media-overlay h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .media-overlay p {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+
+        /* Sponsors Section */
+        .sponsors-section {
+            padding: 80px 0;
+            background-color: var(--primary);
+        }
+
+        .sponsors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 40px;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .sponsor-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .sponsor-item:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        .sponsor-item img {
+            max-width: 100%;
+            max-height: 80px;
+        }
+
+        /* Products Section */
+        .products-section {
+            background-color: var(--light);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-content {
+            padding: 30px;
+        }
+
+        .product-category {
+            display: inline-block;
+            padding: 5px 15px;
+            background-color: var(--secondary);
+            color: var(--dark);
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .product-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .product-description {
+            font-size: 14px;
+            color: var(--gray);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .product-price {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background-color: #f5f7fa;
+        }
+
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-info h3 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .contact-info p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .info-item i {
+            font-size: 20px;
+            color: var(--secondary);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .info-content h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+
+        .info-content p {
+            font-size: 14px;
+            color: var(--gray);
+            margin-bottom: 0;
+        }
+
+        .contact-form {
+            flex: 1;
+            background-color: var(--light);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            background-color: var(--secondary);
+            color: var(--dark);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .form-submit:hover {
+            background-color: var(--primary);
+            color: var(--light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 80px 0 30px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-col h4 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--light);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 60px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 50px;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 40px;
+            }
+            
+            .hero p.tagline {
+                font-size: 18px;
+            }
+            
+            .section-title h2 {
+                font-size: 36px;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">SHAWN<span>LEMIEUX</span></a>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#stats">Stats</a></li>
+                    <li><a href="#games">Games</a></li>
+                    <li><a href="#media">Media</a></li>
+                    <li><a href="#sponsors">Sponsors</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Shawn Rodrigue Lemieux</h1>
+                <p class="tagline">Grandmaster at the Intersection of Chess, Business & Innovation</p>
+                
+                <div class="achievement-badges">
+                    <div class="badge">#1 Ranked Canadian</div>
+                    <div class="badge">3x World Rapid Champion</div>
+                    <div class="badge">Peak FIDE 2785</div>
+                    <div class="badge">Founder of $120M Ventures</div>
+                </div>
+                
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">Book Speaking Engagement</a>
+                    <a href="#products" class="btn btn-secondary">View Products</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Animated Chess Pieces -->
+        <img src="https://cdn-icons-png.flaticon.com/512/2412/2412535.png" class="chess-piece king" alt="Chess King">
+        <img src="https://cdn-icons-png.flaticon.com/512/2412/2412546.png" class="chess-piece queen" alt="Chess Queen">
+        <img src="https://cdn-icons-png.flaticon.com/512/2412/2412552.png" class="chess-piece knight" alt="Chess Knight">
+        
+        <!-- Sponsors Ticker -->
+        <div class="sponsors-ticker">
+            <div class="ticker-content">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png" alt="Mastercard">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Unibet_logo.svg/1280px-Unibet_logo.svg.png" alt="Unibet">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Rolex_logo.svg/1280px-Rolex_logo.svg.png" alt="Rolex">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1280px-Amazon_logo.svg.png" alt="Amazon">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Chess.com_logo.svg/1280px-Chess.com_logo.svg.png" alt="Chess.com">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Mercedes-Benz_logo.svg/1280px-Mercedes-Benz_logo.svg.png" alt="Mercedes-Benz">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/488px-Apple_logo_black.svg.png" alt="Apple">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Shawn</h2>
+                <p>The remarkable journey of a chess prodigy who became a grandmaster, entrepreneur, and global ambassador for the game</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2076&q=80" alt="Shawn Rodrigue Lemieux">
+                    <div class="decoration decoration-1"></div>
+                    <div class="decoration decoration-2"></div>
+                </div>
+                
+                <div class="about-text">
+                    <h3>From Chess Prodigy to Grandmaster Entrepreneur</h3>
+                    <p>Shawn Rodrigue Lemieux began his chess journey at the tender age of 4, showing an innate talent for the game that would soon blossom into a legendary career. By age 9, he had defeated his first International Master, and at just 12 years old, he became the youngest winner of the Canadian Chess Championship.</p>
+                    <p>His meteoric rise continued as he achieved the Grandmaster title at 16, setting a record as the youngest Canadian to do so. But Shawn's ambitions extended far beyond the chessboard. Recognizing the untapped potential at the intersection of chess, technology, and business, he began building an empire that would revolutionize how the world engages with the game.</p>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-year"></div>
+                            <div class="timeline-content">
+                                <h4>Youngest Canadian Grandmaster</h4>
+                                <p>Achieved the title at 16 years old, breaking previous records</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year"></div>
+                            <div class="timeline-content">
+                                <h4>First World Rapid Championship</h4>
+                                <p>Won his first world title at 19, defeating reigning champion Magnus Carlsen</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year"></div>
+                            <div class="timeline-content">
+                                <h4>ChessTech Ventures Founded</h4>
+                                <p>Launched his first tech startup focused on chess education</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section stats-section" id="stats">
+        <div class="container">
+            <div class="section-title">
+                <h2>Career Statistics</h2>
+                <p>The numbers that define one of the most dominant chess careers of the modern era</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="number">2785</div>
+                    <div class="label">Peak FIDE Rating</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">102</div>
+                    <div class="label">Unbeaten Streak</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">14</div>
+                    <div class="label">National Titles</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">3</div>
+                    <div class="label">World Championships</div>
+                </div>
+            </div>
+            
+            <div class="rating-chart">
+                <h3>FIDE Rating Progress (2010-2023)</h3>
+                <div class="chart-container">
+                    <canvas id="ratingChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section class="section games-section" id="games">
+        <div class="container">
+            <div class="section-title">
+                <h2>Iconic Games</h2>
+                <p>Masterpieces of strategy and tactics from Shawn's most celebrated tournament victories</p>
+            </div>
+            
+            <div class="games-filter">
+                <button class="filter-btn active" data-filter="all">All Games</button>
+                <button class="filter-btn" data-filter="tournament">Tournament Wins</button>
+                <button class="filter-btn" data-filter="championship">Championships</button>
+                <button class="filter-btn" data-filter="exhibition">Exhibitions</button>
+            </div>
+            
+            <div class="games-grid">
+                <div class="game-card" data-category="championship">
+                    <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="World Championship Game">
+                    <div class="game-card-content">
+                        <h4>World Championship 2022</h4>
+                        <p>Defeated Magnus Carlsen with a brilliant queen sacrifice in 35 moves</p>
+                        <div class="meta">
+                            <span>Classical</span>
+                            <span>35 moves</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="game-card" data-category="tournament">
+                    <img src="https://images.unsplash.com/photo-1523730205978-59fd1b2965e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2119&q=80" alt="Tata Steel Tournament">
+                    <div class="game-card-content">
+                        <h4>Tata Steel 2021</h4>
+                        <p>Immortal game against Ian Nepomniachtchi featuring knight domination</p>
+                        <div class="meta">
+                            <span>Classical</span>
+                            <span>42 moves</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="game-card" data-category="exhibition">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Simultaneous Exhibition">
+                    <div class="game-card-content">
+                        <h4>50-Board Simultaneous</h4>
+                        <p>Played 50 opponents simultaneously, winning 48 and drawing 2</p>
+                        <div class="meta">
+                            <span>Exhibition</span>
+                            <span>Various</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Section -->
+    <section class="section media-section" id="media">
+        <div class="container">
+            <div class="section-title">
+                <h2>Press & Media</h2>
+                <p>Shawn's appearances across television, print, and digital platforms worldwide</p>
+            </div>
+            
+            <div class="media-tabs">
+                <button class="tab-btn active" data-tab="interviews">Interviews</button>
+                <button class="tab-btn" data-tab="documentaries">Documentaries</button>
+                <button class="tab-btn" data-tab="campaigns">Campaigns</button>
+                <button class="tab-btn" data-tab="features">Features</button>
+            </div>
+            
+            <div class="tab-content active" id="interviews">
+                <div class="media-grid">
+                    <div class="media-item">
+                        <img src="https://images.unsplash.com/photo-1572949645841-094f3a9c4c94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" alt="60 Minutes Interview">
+                        <div class="media-overlay">
+                            <h4>60 Minutes</h4>
+                            <p>"The Mozart of Chess"</p>
+                        </div>
+                    </div>
+                    
+                    <div class="media-item">
+                        <img src="https://images.unsplash.com/photo-1560419015-7c427e8ae5ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="TED Talk">
+                        <div class="media-overlay">
+                            <h4>TED Talk</h4>
+                            <p>"Chess Principles for Business Strategy"</p>
+                        </div>
+                    </div>
+                    
+                    <div class="media-item">
+                        <img src="https://images.unsplash.com/photo-1507679799987-73794211568e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Forbes Interview">
+                        <div class="media-overlay">
+                            <h4>Forbes Interview</h4>
+                            <p>"Building a Business Empire"</p>
+                        </div>
+                    </div>
+                    
+                    <div class="media-item">
+                        <img src="https://images.unsplash.com/photo-1551269901-5c5e14c25df7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="WSJ Profile">
+                        <div class="media-overlay">
+                            <h4>Wall Street Journal</h4>
+                            <p>"From Checkmate to Venture Capital"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="documentaries">
+                <!-- Content would be loaded here when tab is clicked -->
+            </div>
+            
+            <div class="tab-content" id="campaigns">
+                <!-- Content would be loaded here when tab is clicked -->
+            </div>
+            
+            <div class="tab-content" id="features">
+                <!-- Content would be loaded here when tab is clicked -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <section class="section sponsors-section" id="sponsors">
+        <div class="container">
+            <div class="section-title">
+                <h2>Global Partners</h2>
+                <p>Prestigious brands that Shawn represents as ambassador and strategic partner</p>
+            </div>
+            
+            <div class="sponsors-grid">
+                <div class="sponsor-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png" alt="Mastercard">
+                </div>
+                <div class="sponsor-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Unibet_logo.svg/1280px-Unibet_logo.svg.png" alt="Unibet">
+                </div>
+                <div class="sponsor-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Rolex_logo.svg/1280px-Rolex_logo.svg.png" alt="Rolex">
+                </div>
+                <div class="sponsor-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1280px-Amazon_logo.svg.png" alt="Amazon">
+                </div>
+                <div class="sponsor-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Chess.com_logo.svg/1280px-Chess.com_logo.svg.png" alt="Chess.com">
+                </div>
+                <div class="sponsor-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Mercedes-Benz_logo.svg/1280px-Mercedes-Benz_logo.svg.png" alt="Mercedes-Benz">
+                </div>
+                <div class="sponsor-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/488px-Apple_logo_black.svg.png" alt="Apple">
+                </div>
+                <div class="sponsor-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/HD_logo.svg/2048px-HD_logo.svg.png" alt="Hugo Boss">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section products-section" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Products & Ventures</h2>
+                <p>Innovative chess-related products and business ventures created by Shawn</p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1630152675905-c2ddef8d3e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Chess App">
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Digital</span>
+                        <h3 class="product-title">Play Magnus Elite</h3>
+                        <p class="product-description">The premium chess training app featuring Shawn's exclusive advanced modules and AI opponent calibrated to his playing style.</p>
+                        <div class="product-price">$29.99/month</div>
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1583305729652-1d0d0dd3fe2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Chess Set">
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Luxury</span>
+                        <h3 class="product-title">Signature Chess Set</h3>
+                        <p class="product-description">Handcrafted limited edition chess set designed by Shawn, featuring NFC-enabled pieces that connect to training content.</p>
+                        <div class="product-price">$2,500.00</div>
+                        <a href="#" class="btn btn-primary">Pre-Order</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Masterclass">
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Education</span>
+                        <h3 class="product-title">Strategic Mind Masterclass</h3>
+                        <p class="product-description">12-week corporate training program teaching chess principles for business strategy and decision-making.</p>
+                        <div class="product-price">$5,000/person</div>
+                        <a href="#" class="btn btn-primary">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <p>Contact Shawn's team for speaking engagements, sponsorship opportunities, or media inquiries</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Connect With Shawn</h3>
+                    <p>For business inquiries, sponsorship opportunities, or media requests, please use the contact form or reach out directly to the appropriate team member.</p>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info-content">
+                            <h4>Email</h4>
+                            <p>business@shawnlemieux.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="info-content">
+                            <h4>Phone</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="info-content">
+                            <h4>Office</h4>
+                            <p>350 5th Ave, New York, NY 10118</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" class="form-control" required>
+                                <option value="">Select an option</option>
+                                <option value="speaking">Speaking Engagement</option>
+                                <option value="sponsorship">Sponsorship Inquiry</option>
+                                <option value="media">Media Request</option>
+                                <option value="business">Business Opportunity</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h4>Shawn Lemieux</h4>
+                    <p>Grandmaster, entrepreneur, and innovator redefining modern chess.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#stats">Stats</a></li>
+                        <li><a href="#games">Games</a></li>
+                        <li><a href="#media">Media</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#sponsors">Sponsors</a></li>
+                        <li><a href="#">Press Kit</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:business@shawnlemieux.com">Email</a></li>
+                        <li><a href="tel:+15551234567">Phone</a></li>
+                        <li><a href="#">Book Speaking</a></li>
+                        <li><a href="#">Sponsor Inquiry</a></li>
+                        <li><a href="#contact">Contact Form</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Shawn Rodrigue Lemieux. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                }
+            });
+        });
+        
+        // Games Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const gameCards = document.querySelectorAll('.game-card');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const filter = btn.getAttribute('data-filter');
+                
+                gameCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Media Tabs
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = btn.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Rating Chart
+        const ctx = document.getElementById('ratingChart').getContext('2d');
+        const ratingChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023'],
+                datasets: [{
+                    label: 'FIDE Rating',
+                    data: [2200, 2350, 2450, 2520, 2600, 2650, 2700, 2720, 2750, 2770, 2785, 2775, 2760, 2770],
+                    borderColor: '#D4AF37',
+                    backgroundColor: 'rgba(212, 175, 55, 0.1)',
+                    borderWidth: 3,
+                    pointBackgroundColor: '#D4AF37',
+                    pointRadius: 5,
+                    pointHoverRadius: 7,
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        backgroundColor: '#0A1A2F',
+                        titleColor: '#D4AF37',
+                        bodyColor: '#F8FAFC',
+                        borderColor: '#D4AF37',
+                        borderWidth: 1,
+                        padding: 15,
+                        displayColors: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        min: 2100,
+                        max: 2800,
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        },
+                        ticks: {
+                            color: '#F8FAFC'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        },
+                        ticks: {
+                            color: '#F8FAFC'
+                        }
+                    }
+                }
+            }
+        });
+        
+        // Sponsors Ticker Animation
+        const tickerContent = document.querySelector('.ticker-content');
+        const tickerItems = tickerContent.querySelectorAll('img');
+        
+        // Duplicate items for seamless looping
+        tickerItems.forEach(item => {
+            const clone = item.cloneNode(true);
+            tickerContent.appendChild(clone);
+        });
+        
+        // Form Submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the data to a server
+            console.log({ name, email, subject, message });
+            
+            // Show success message
+            alert('Thank you for your message! Shawn\'s team will get back to you soon.');
+            
+            // Reset form
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>
