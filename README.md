@@ -15,6 +15,19 @@ This website has been **reviewed and approved** by Shawn Rodrigue-Lemieux as an 
 
 ---
 
+## 🎗️ Tribute to a Chess Prodigy  
+Shawn Rodrigue-Lemieux's journey in the world of chess is nothing short of inspirational. From his early days as a promising young talent to becoming Canada's youngest Grandmaster, Shawn has demonstrated exceptional skill, dedication, and sportsmanship. His strategic brilliance on the board and humble demeanor off it have made him a role model for aspiring chess players across Canada and beyond.
+
+### Why This Tribute Matters  
+- 🌟 **Inspiration for Future Generations** - Shawn's achievements show what's possible with passion and perseverance  
+- ♟️ **Elevating Canadian Chess** - His success has put Canadian chess on the global map  
+- 📚 **Educational Impact** - Through his games, Shawn teaches valuable lessons in strategy and critical thinking  
+- 🤝 **Community Building** - His journey encourages community engagement and youth participation in chess  
+
+This website serves as a digital monument to Shawn's accomplishments and a source of motivation for chess enthusiasts worldwide.
+
+---
+
 ## 🚀 Features  
 - ✅ **Responsive Design** – Seamless experience across desktop, tablet, and mobile devices  
 - ✅ **Interactive Chess Board** – Animated piece movement highlighting Shawn’s dynamic playing style  
